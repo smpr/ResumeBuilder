@@ -12,7 +12,7 @@ class Api::InfosController < ApplicationController
     def create
         @user = current_user
         @user.create_info(info_params)
-        puts "create hit"
+        puts "succesful info creation"
        end
     def update
       puts "info patch hit"
@@ -31,6 +31,6 @@ class Api::InfosController < ApplicationController
       private
       
           def info_params
-              params.require(:info).permit(:firstName, :slastName, :email, :phone, :linkedIn)
+              params.require(:info).permit(:firstName, :lastName, :email, :phone, :linkedIn)
           end
 end
