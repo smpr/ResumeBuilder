@@ -39,13 +39,7 @@ class HomePage extends Component {
                         <label htmlFor="password">Password: </label>
                         <input onChange={this.handleChange} type="password" name="password" value={this.state.password}/>
                     </div>
-                    <div>
-                        <label htmlFor="password_confirmation">Confirm Password: </label>
-                        <input onChange={this.handleChange} type="password" name="password_confirmation"
-                               value={this.state.password_confirmation}/>
-                    </div>
-
-                    <button onClick={this.signUp}>Sign Up</button>
+                    <Link to={`/User/Create`}><button>Sign Up</button></Link>
                     <button onClick={this.signIn}>Log In</button>
                 </form>
             </div>
