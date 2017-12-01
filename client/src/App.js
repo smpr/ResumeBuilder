@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from "./util/SessionHeaderUtil"
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
 import Test from './components/Test/TestPage'
 
 import HomePage from './components/HomePage/HomePage'
@@ -94,25 +97,30 @@ class App extends Component {
         signOut={this.signOut}
         loggedIn={this.state.signedIn} />
     )
+    const CreateUserSignup = () => (
+      <UserCreate
+        signUp={this.signUp}
+      />
+    )
     return (
-      
+      <MuiThemeProvider>
         <Router>
-         
 
-           
 
-            <Switch>
 
-              <Route exact path="/" render={SignUpLogInComponent}/>
 
-              <Route exact path="/User/Create" component={UserCreate}/>
+          <Switch>
 
-              <Route exact path="/test" component={Test}/>
+            <Route exact path="/" render={SignUpLogInComponent} />
 
-            </Switch>
-          
+            <Route exact path="/User/Create" render={CreateUserSignup} />
+
+            <Route exact path="/test" component={Test} />
+
+          </Switch>
+
         </Router>
-      
+      </MuiThemeProvider>
     );
   }
 }
