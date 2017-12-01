@@ -1,3 +1,4 @@
+Info.destroy_all
 User.destroy_all
 
 
@@ -11,3 +12,5 @@ demo = User.create!(
     password: '123123123',
     password_confirmation: '123123123'
 )
+bobinfo = Info.create!(firstName:"Bob",lastName:"Barker",phone: 5555555,linkedIn:"Bob@linkedIn.com", user_id: bob.id)
+demoinfo = Info.create!(firstName:"Bob",lastName:"Barker",phone: 5555555,linkedIn:"Bob@linkedIn.com", user_id: demo.id)
