@@ -12,17 +12,16 @@ class UserCreat extends Component {
             email: '',
             password: '',
             password_confirmation: '',
-            city: "",
-            state: "",
-            address: "",
-            country: "",
-            zip: "",
+            firstName: "",
+            lastName: "",
+            phone: "",
+            linkedIn: "",
+           
         },
         redirectToInfoHome: false,
         togglePage2: false,
         togglePage3: false,
         togglePage4: false,
-        togglePage5: false,
         togglePage6: false,
         toggleConirm: false
     }
@@ -149,31 +148,31 @@ class UserCreat extends Component {
                     <FormContainer>
                         <div>
                             <TextField
-                                hintText="Address"
-                                floatingLabelText="Address"
+                                hintText="First Name"
+                                floatingLabelText="First Name"
                                 floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
                                 floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                 onChange={this.handleChange}
-                                name="address"
+                                name="firstName"
                                 type="text"
                                 required
 
-                                value={this.state.info.address}
+                                value={this.state.info.firstName}
                             />
 
                         </div>
                         <div>
                             <TextField
-                                hintText="Zip"
-                                floatingLabelText="Zip"
+                                hintText="Last Name"
+                                floatingLabelText="Last Name"
                                 floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
                                 floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                 onChange={this.handleChange}
-                                name="zip"
-                                type="number"
+                                name="lastName"
+                                type="text"
                                 required
 
-                                value={this.state.info.zip}
+                                value={this.state.info.lastName}
                             />
 
                         </div>
@@ -189,50 +188,36 @@ class UserCreat extends Component {
                     <FormContainer>
                         <div>
                             <TextField
-                                hintText="City"
-                                floatingLabelText="City"
+                                hintText="Phone Number"
+                                floatingLabelText="Phone Number"
                                 floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
                                 floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                 onChange={this.handleChange}
-                                name="city"
-                                type="text"
+                                name="phone"
+                                type="number"
                                 required
 
-                                value={this.state.info.city}
+                                value={this.state.info.phone}
                             />
 
                         </div>
                         <div>
                             <TextField
-                                hintText="State"
-                                floatingLabelText="State"
+                                hintText="LinkedIn Profile"
+                                floatingLabelText="LinkedIn Profile"
                                 floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
                                 floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                 onChange={this.handleChange}
-                                name="state"
+                                name="linkedIn"
                                 type="text"
                                 required
 
-                                value={this.state.info.state}
+                                value={this.state.info.linkedIn}
                             />
 
                         </div>
 
-                        <div>
-                            <TextField
-                                hintText="Country"
-                                floatingLabelText="Country"
-                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
-                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
-                                onChange={this.handleChange}
-                                name="country"
-                                type="text"
-                                required
 
-                                value={this.state.info.country}
-                            />
-
-                        </div>
                         <div>
                             <RaisedButton onClick={this.promptToFourthForm} label="Next" style={Style} />
                         </div>
@@ -250,19 +235,16 @@ class UserCreat extends Component {
                             Email: {this.state.info.email}
                         </div>
                         <div>
-                            Address: {this.state.info.address}
+                            First Name: {this.state.info.firstName}
                         </div>
                         <div>
-                            City: {this.state.info.city}
+                            Last Name: {this.state.info.lastName}
                         </div>
                         <div>
-                            State: {this.state.info.state}
+                            Phone: {this.state.info.phone}
                         </div>
                         <div>
-                            Zip: {this.state.info.zip}
-                        </div>
-                        <div>
-                            Country: {this.state.info.country}
+                            LinkedIn: {this.state.info.linkedIn}
                         </div>
                         <div>
                             <RaisedButton onClick={this.handleSubmit} label="Submit" style={Style} />
