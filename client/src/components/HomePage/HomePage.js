@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
+import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 
 class HomePage extends Component {
@@ -28,21 +31,54 @@ class HomePage extends Component {
         if (this.state.redirectToNextPage) {
             return <Redirect to={`/Test`} />
         }
+       
         return (
-            <div>
-                <form>
-                    <div>
-                        <label htmlFor="email">E-mail: </label>
-                        <input onChange={this.handleChange} type="text" name="email" value={this.state.email}/>
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password: </label>
-                        <input onChange={this.handleChange} type="password" name="password" value={this.state.password}/>
-                    </div>
-                    <Link to={`/User/Create`}><button>Sign Up</button></Link>
-                    <button onClick={this.signIn}>Log In</button>
-                </form>
-            </div>
+            <BodyContainer>
+                <Container>
+                    <FormContainer>
+
+
+                        <form>
+                            <div>
+                                <h2>Log In</h2>
+                            </div>
+                            <div>
+                                <TextField
+                                    hintText="Email"
+                                    floatingLabelText="Email"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="email"
+                                    type="text"
+                                    required
+
+                                    value={this.state.email}
+                                />
+                               </div>
+                            <div>
+                                <TextField
+                                    hintText="Password"
+                                    floatingLabelText="Password"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="password"
+                                    type="password"
+                                    required
+
+                                    value={this.state.password}
+                                />
+                                </div>
+                            <div>
+                                <RaisedButton href={`/Users/Create`} label="Sign up" style={Style} />
+                                <RaisedButton onClick={this.signIn} label="Login" style={Style} />
+                            </div>
+
+                        </form>
+                    </FormContainer>
+                </Container>
+            </BodyContainer>
         )
     }
 }
